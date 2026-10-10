@@ -1,0 +1,3 @@
+--- LAPORAN TUGAS ---
+- UTS (Prioritas 1). Sisa waktu: 0 hari.
+  Detail: {'dosen': 'Pak Rahman', 'tipe': 'Individu'}
