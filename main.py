@@ -58,11 +58,11 @@ def main():
                                 tanggal=bagian[2], prioritas=int(bagian[3]))
                     manajer.tambah_objek(tgs)
             
-            tanggal_kumpul = [t.tanggal for t in manajer.daftar_tugas]
-            sisa = manajer.hitung_sisa_hari(*tanggal_kumpul)
-            
+            urut = manajer.urutkan_prioritas()
+            sisa = manajer.hitung_sisa_hari(*[t.tanggal for t in urut])
+
             laporan = "=== LAPORAN TUGAS ===\n"
-            for i, t in enumerate(manajer.urutkan_prioritas()):
+            for i, t in enumerate(urut):
                 laporan += f"- [{t.prioritas}] {t.nama} ({t.matkul}). Sisa: {sisa[i]} hari.\n"
                 
             print("\n" + laporan)
