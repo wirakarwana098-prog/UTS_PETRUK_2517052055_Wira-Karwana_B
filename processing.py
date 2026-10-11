@@ -1,7 +1,7 @@
 from datetime import datetime
 
 class Tugas:
-    # Syarat A: Penggunaan **kwargs untuk atribut bervariasi
+    # Penggunaan **kwargs untuk atribut bervariasi
     def __init__(self, nama, matkul, tanggal, prioritas, **kwargs):
         self.nama = nama
         self.matkul = matkul
@@ -21,12 +21,12 @@ class ManajerTugas:
         self.daftar_tugas.append(objek_tugas)
 
     def urutkan_prioritas(self):
-        # Syarat A: Penggunaan lambda sebagai key pada fungsi sorted()
+        # Penggunaan lambda sebagai key pada fungsi sorted()
         self.daftar_tugas.sort(key=lambda t: t.prioritas)
         return self.daftar_tugas
 
     def hitung_sisa_hari(self, *args):
-        # Syarat A: Penggunaan *args untuk memproses banyak tanggal sekaligus
+        # Penggunaan *args untuk memproses banyak tanggal sekaligus
         sisa_waktu = []
         hari_ini = datetime.now()
         for tgl_str in args:

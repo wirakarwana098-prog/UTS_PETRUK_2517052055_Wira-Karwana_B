@@ -27,7 +27,7 @@ def simpan_tugas(filename, data_str):
 def baca_semua(filename="data_tugas.txt"):
     data = []
     try:
-        # Mode 'r': Membaca iteratif baris demi baris
+        # Mode 'r': Membaca baris demi baris
         with open(filename, 'r') as f:
             for baris in f:
                 if "===" not in baris and baris.strip():
