@@ -33,7 +33,6 @@ def main():
                 prio_input = input("Tingkat Prioritas (1-3): ")
                 prio_valid = validasi.cek_prioritas(prio_input)
             
-            dosen_input = input("Dosen Pengampu: ")
             tipe_input = input("Tipe Tugas (Individu/Kelompok): ")
             
             data_simpan = f"{nama};{matkul};{tgl_valid};{prio_valid}"
