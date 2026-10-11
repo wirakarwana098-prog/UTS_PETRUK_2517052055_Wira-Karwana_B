@@ -78,16 +78,18 @@ def main():
                 
             print("Tugas yang ada saat ini:")
             for baris in data_sementara:
-                print(f"- {baris.split(';')[0]}")
-                
+                bagian = baris.split(';')
+                print(f"- {bagian[0]} ({bagian[1]})")
+
             nama_hapus = input("\nMasukkan Nama Tugas yang ingin dihapus (harus persis): ")
-            
-            is_terhapus = fileio.hapus_tugas("data_tugas.txt", nama_hapus)
-            
+            matkul_hapus = input("Masukkan Mata Kuliah tugas tersebut (harus persis): ")
+
+            is_terhapus = fileio.hapus_tugas("data_tugas.txt", nama_hapus, matkul_hapus)
+
             if is_terhapus:
-                print(f"BERHASIL: Tugas '{nama_hapus}' berhasil dihapus dari database!")
+                print(f"BERHASIL: Tugas '{nama_hapus}' ({matkul_hapus}) berhasil dihapus dari database!")
             else:
-                print(f"GAGAL: Tugas '{nama_hapus}' tidak ditemukan.")
+                print(f"GAGAL: Tugas '{nama_hapus}' ({matkul_hapus}) tidak ditemukan.")
 
         elif pilihan == '4':
             print("\nTerima kasih telah menggunakan aplikasi ini. KERJAIN!")

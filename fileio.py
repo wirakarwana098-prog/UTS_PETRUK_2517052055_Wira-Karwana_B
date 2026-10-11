@@ -35,22 +35,22 @@ def cek_duplikat(filename, baris_baru):
         return False
     return False
 
-def hapus_tugas(filename, nama_tugas_hapus):
+def hapus_tugas(filename, nama_tugas_hapus, matkul_hapus):
     try:
         with open(filename, 'r') as f:
             semua_baris = f.readlines()
-            
+
         berhasil_dihapus = False
-        
+
         with open(filename, 'w') as f:
             for baris in semua_baris:
                 if not baris.strip():
                     continue
-                if baris.startswith(nama_tugas_hapus + ";"):
-                    berhasil_dihapus = True 
+                if baris.startswith(nama_tugas_hapus + ";" + matkul_hapus + ";"):
+                    berhasil_dihapus = True
                 else:
-                    f.write(baris) 
-                    
+                    f.write(baris)
+
         return berhasil_dihapus
     except FileNotFoundError:
         print(f"Error: File {filename} tidak ditemukan.")
